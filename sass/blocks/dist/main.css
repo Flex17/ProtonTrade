@@ -1,0 +1,7 @@
+.main {
+  background: url("../img/mainPage/bg.png") center center no-repeat;
+  background-size: cover;
+}
+.main-info {
+  padding-top: 182px;
+}

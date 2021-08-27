@@ -1,0 +1,158 @@
+.main
+    background: url('../img/mainPage/bg.png') left bottom no-repeat
+    background-size: cover
+    &-info
+        padding: 183px 0px
+        &__suptitle
+            font-family: 'Rubik', sans-serif
+            font-weight: 300
+            font-size: 22px
+            line-height: 1.2
+            color: $black-color
+        &__title
+            margin-top: 10px
+            margin-bottom: 5px
+        &__subtitle
+            font-family: 'Rubik', sans-serif
+            font-weight: 400
+            font-size: 20px
+            color: $black-color
+            margin-bottom: 62px
+    &-connection
+        display: flex
+        align-items: center
+        &__tryBtn
+            display: flex
+            align-items: center
+            padding: 18px 48px
+            background-color: $blue-color
+            margin-right: 24px
+            transition: .3s
+            border-radius: 4px
+            &:hover
+                background-color: $darkBlue-color
+        &__tryBtnContent
+            display: flex
+            align-items: center
+        &__text
+            margin-right: 8px
+            color: $white-color
+            font-family: "Poppins", sans-serif
+            font-size: 16px
+        &__img
+            display: block
+    &-subscr
+        display: flex
+        align-items: center
+        &__text
+            margin-left: 8px
+            font-family: "Poppins", sans-serif
+            font-weight: 400
+            font-size: 16px
+            color: $black-color
+    &-cards
+        display: flex
+        justify-content: space-between
+        align-items: start
+        &__item
+            padding: 44px 27px
+            background-color: $white-color
+            box-shadow: 0px 0px 34px rgba(208, 208, 208, 0.4)
+            border-radius: 4px
+            width: 24%
+        &__price
+            font-family: 'Poppins', sans-serif
+            font-weight: 700
+            color: $black-color
+            font-size: 52px
+            text-align: center
+        &__descr
+            text-align: center
+            font-family: 'Poppins', sans-serif
+            font-weight: 400
+            font-size: 20px
+            color: $black-color
+            margin-top: 4px
+
+@media screen and (min-width: 1200px) and ( max-width:  1440px)
+    .main
+        &-content
+            width: 100%
+            max-width: 1032px
+            margin: 0 auto
+        &-cards
+            &__price
+                font-size: 42px
+            &__descr
+                font-size: 20px
+
+@media screen and (min-width: 768px) and ( max-width:  1200px)
+    .main
+        &-info
+            padding-top: 191px
+            padding-bottom: 75px
+        &-content
+            width: 100%
+            max-width: 90%
+            // max-width: 740px
+            margin: 0 auto
+        &-connection
+            display: flex
+            flex-direction: column
+            margin-top: 150px
+            &__tryBtn
+                width: 100%
+                margin-right: 0
+            &__tryBtnContent
+                margin: 0 auto
+        &-subscr
+            margin-top: 12px
+        &-cards
+            flex-wrap: wrap
+            &__item
+                width: 48%
+                &:nth-child(1)
+                    margin-bottom: 24px
+                &:nth-child(2)
+                    margin-bottom: 24px
+            &__price
+                font-size: 42px
+            &__descr
+                font-size: 20px
+
+@media screen and ( max-width:  768px)
+    .main
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+        &-info
+            padding-top: 73px
+            padding-bottom: 120px
+            &__suptitle
+                font-size: 18px
+            &__title
+                font-size: 58px
+            &__subtitle
+                font-size: 16px
+        &-connection
+            display: flex
+            flex-direction: column
+            margin-top: 102px
+            &__tryBtn
+                width: 100%
+                margin-right: 0
+            &__tryBtnContent
+                margin: 0 auto
+        &-subscr
+            margin-top: 12px
+        &-cards
+            flex-wrap: wrap
+            &__item
+                width: 100%
+                &:not(&:last-child)
+                    margin-bottom: 24px
+            &__price
+                font-size: 42px
+            &__descr
+                font-size: 20px
