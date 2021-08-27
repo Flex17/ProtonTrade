@@ -68,6 +68,7 @@ input {
 
 .title2 {
   font-size: 42px;
+  font-weight: 700;
 }
 
 .subtitle24 {
@@ -120,7 +121,7 @@ input {
 @media screen and (min-width: 768px) and (max-width: 1200px) {
   .nav-content {
     width: 100%;
-    max-width: 740px;
+    max-width: 90%;
     margin: 0 auto;
   }
   .nav-logo img {
@@ -131,7 +132,7 @@ input {
 @media screen and (max-width: 768px) {
   .nav-content {
     width: 100%;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
   }
   .nav-logo img {
@@ -236,8 +237,383 @@ input {
 }
 
 .main {
-  background: url("../img/mainPage/bg.png") center center no-repeat;
+  background: url("../img/mainPage/bg.png") left bottom no-repeat;
+  background-size: cover;
 }
 .main-info {
-  margin-top: 182px;
+  padding: 183px 0px;
+}
+.main-info__suptitle {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1.2;
+  color: #343A40;
+}
+.main-info__title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.main-info__subtitle {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #343A40;
+  margin-bottom: 62px;
+}
+.main-connection {
+  display: flex;
+  align-items: center;
+}
+.main-connection__tryBtn {
+  display: flex;
+  align-items: center;
+  padding: 18px 48px;
+  background-color: #3355FF;
+  margin-right: 24px;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+.main-connection__tryBtn:hover {
+  background-color: #122791;
+}
+.main-connection__tryBtnContent {
+  display: flex;
+  align-items: center;
+}
+.main-connection__text {
+  margin-right: 8px;
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+.main-connection__img {
+  display: block;
+}
+.main-subscr {
+  display: flex;
+  align-items: center;
+}
+.main-subscr__text {
+  margin-left: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #343A40;
+}
+.main-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.main-cards__item {
+  padding: 44px 27px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 34px rgba(208, 208, 208, 0.4);
+  border-radius: 4px;
+  width: 24%;
+}
+.main-cards__price {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #343A40;
+  font-size: 52px;
+  text-align: center;
+}
+.main-cards__descr {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #343A40;
+  margin-top: 4px;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .main-content {
+    width: 100%;
+    max-width: 1032px;
+    margin: 0 auto;
+  }
+  .main-cards__price {
+    font-size: 42px;
+  }
+  .main-cards__descr {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .main-info {
+    padding-top: 191px;
+    padding-bottom: 75px;
+  }
+  .main-content {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .main-connection {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+  }
+  .main-connection__tryBtn {
+    width: 100%;
+    margin-right: 0;
+  }
+  .main-connection__tryBtnContent {
+    margin: 0 auto;
+  }
+  .main-subscr {
+    margin-top: 12px;
+  }
+  .main-cards {
+    flex-wrap: wrap;
+  }
+  .main-cards__item {
+    width: 48%;
+  }
+  .main-cards__item:nth-child(1) {
+    margin-bottom: 24px;
+  }
+  .main-cards__item:nth-child(2) {
+    margin-bottom: 24px;
+  }
+  .main-cards__price {
+    font-size: 42px;
+  }
+  .main-cards__descr {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-content {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .main-info {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+  .main-info__suptitle {
+    font-size: 18px;
+  }
+  .main-info__title {
+    font-size: 58px;
+    line-height: 1.1;
+  }
+  .main-info__subtitle {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  .main-connection {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+  }
+  .main-connection__tryBtn {
+    width: 100%;
+    margin-right: 0;
+  }
+  .main-connection__tryBtnContent {
+    margin: 0 auto;
+  }
+  .main-subscr {
+    margin-top: 12px;
+  }
+  .main-cards {
+    flex-wrap: wrap;
+  }
+  .main-cards__item {
+    width: 100%;
+  }
+  .main-cards__item:not(.main-cards__item:last-child) {
+    margin-bottom: 24px;
+  }
+  .main-cards__price {
+    font-size: 42px;
+  }
+  .main-cards__descr {
+    font-size: 20px;
+  }
+}
+.abilities {
+  background-color: #FAFAFA;
+}
+.abilities-content {
+  padding-top: 100px;
+  display: flex;
+  align-items: start;
+}
+.abilities-content__title {
+  max-width: 300px;
+  margin-right: 77px;
+}
+.abilities-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.abilities-cards__item {
+  position: relative;
+  max-width: 376px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 34px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  max-height: 393px;
+  padding: 60px 34px 40px 40px;
+}
+.abilities-cards__item:nth-child(2) {
+  max-height: 310px;
+  margin-bottom: 87px;
+}
+.abilities-cards__item:nth-child(3) {
+  max-height: 330px;
+  margin-bottom: 66px;
+}
+.abilities-cards__item:nth-child(4) {
+  max-height: 300px;
+}
+.abilities-cards__item:nth-child(5) {
+  max-height: 317px;
+}
+.abilities-cards__item:nth-child(6) {
+  max-height: 260px;
+}
+.abilities-cards__img {
+  position: absolute;
+  top: -50px;
+  left: 20px;
+}
+.abilities-cards__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  line-height: 1.7;
+  color: #343A40;
+  margin-bottom: 5px;
+}
+.abilities-cards__descr {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #343A40;
+  margin-bottom: 20px;
+}
+.abilities-cards__subtitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #343A40;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .abilities-content {
+    width: 100%;
+    max-width: 1032px;
+    margin: 0 auto;
+  }
+  .abilities-content__title {
+    margin-right: 30px;
+  }
+  .abilities-cards__item {
+    max-width: 328px;
+  }
+  .abilities-cards__item:nth-child(2) {
+    max-height: 330px;
+    margin-bottom: 86px;
+  }
+  .abilities-cards__item:nth-child(3) {
+    max-height: 360px;
+    margin-bottom: 65px;
+  }
+  .abilities-cards__item:nth-child(4) {
+    max-height: 305px;
+  }
+  .abilities-cards__item:nth-child(5) {
+    max-height: 350px;
+  }
+  .abilities-cards__item:nth-child(6) {
+    max-height: 280px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .abilities-content {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .abilities-content__title {
+    margin-right: 0px;
+    max-width: none;
+    margin-bottom: 73px;
+    width: 100%;
+  }
+  .abilities-cards__item {
+    max-width: 328px;
+  }
+  .abilities-cards__item:nth-child(2) {
+    max-height: 330px;
+    margin-bottom: 86px;
+  }
+  .abilities-cards__item:nth-child(3) {
+    max-height: 360px;
+    margin-bottom: 65px;
+  }
+  .abilities-cards__item:nth-child(4) {
+    max-height: 305px;
+    margin-bottom: 107px;
+  }
+  .abilities-cards__item:nth-child(5) {
+    max-height: 350px;
+  }
+  .abilities-cards__item:nth-child(6) {
+    max-height: 280px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .abilities-content {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding-top: 60px;
+  }
+  .abilities-content__title {
+    margin-right: 0px;
+    max-width: none;
+    margin-bottom: 60px;
+    width: 100%;
+    font-size: 40px;
+  }
+  .abilities-cards {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .abilities-cards__item {
+    max-width: 296px;
+  }
+  .abilities-cards__item:nth-child(2) {
+    max-height: 355px;
+    margin-bottom: 61px;
+  }
+  .abilities-cards__item:nth-child(3) {
+    max-height: 400px;
+    margin-bottom: 61px;
+  }
+  .abilities-cards__item:nth-child(4) {
+    max-height: 335px;
+    margin-bottom: 61px;
+  }
+  .abilities-cards__item:nth-child(5) {
+    max-height: 395px;
+    margin-bottom: 61px;
+  }
+  .abilities-cards__item:nth-child(6) {
+    max-height: 275px;
+    margin-bottom: 61px;
+  }
 }

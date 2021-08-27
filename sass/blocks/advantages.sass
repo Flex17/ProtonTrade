@@ -1,0 +1,98 @@
+.advantages
+    &-content
+        padding-top: 100px
+        padding-bottom: 68px
+    &-cards
+        display: flex
+        flex-direction: column
+        &__item
+            display: flex
+            justify-content: space-between
+            align-items: center
+            max-width: 1059px
+            &:not(&:last-child)
+                margin-bottom: 76px
+        &__title
+            margin-bottom: 36px
+        &__title2
+            display: none
+        &__subtitle
+            font-family: "Poppins", sans-serif
+            font-weight: 600
+            font-size: 24px
+            line-height: 1.5
+            color: $black-color
+            margin-bottom: 12px
+        &__descr
+            font-family: "Poppins", sans-serif
+            font-weight: 400
+            font-size: 16px
+            line-height: 1.5
+            color: $black-color
+            max-width: 557px
+
+@media screen and (min-width: 1200px) and ( max-width:  1440px)
+    .advantages
+        &-content
+            width: 100%
+            max-width: 1032px
+            margin: 0 auto
+        &-cards
+            &__item
+                max-width: 1032px
+
+@media screen and (min-width: 768px) and ( max-width:  1200px)
+    .advantages
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+        &-cards
+            margin: 0 auto
+            &__item
+                flex-direction: column
+                justify-content: center
+            &__title
+                display: none
+            &__title2
+                display: block
+                text-align: center
+                margin-bottom: 36px
+            &__text
+                order: 2
+            &__subtitle
+                text-align: center
+            &__descr
+                text-align: center
+            &__img
+                order: 1
+                margin-bottom: 24px
+
+@media screen and ( max-width:  768px)
+    .advantages
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+        &-cards
+            margin: 0 auto
+            &__item
+                flex-direction: column
+                justify-content: center
+            &__title
+                display: none
+            &__title2
+                display: block
+                text-align: center
+                margin-bottom: 36px
+            &__text
+                order: 2
+            &__subtitle
+                text-align: center
+            &__descr
+                text-align: center
+            &__img
+                order: 1
+                margin-bottom: 24px
+                width: 100%
+                max-width: 300px

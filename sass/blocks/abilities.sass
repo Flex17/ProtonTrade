@@ -1,0 +1,144 @@
+.abilities
+    background-color: $bg-color
+    &-content
+        padding: 100px 0px
+        display: flex
+        align-items: start
+        &__title
+            max-width: 300px
+            margin-right: 77px
+    &-cards
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        &__item
+            position: relative
+            max-width: 376px
+            background: #FFFFFF
+            box-shadow: 0px 0px 34px rgba(0, 0, 0, 0.1)
+            border-radius: 4px
+            max-height: 393px
+            padding: 60px 34px 40px 40px
+            &:nth-child(2)
+                max-height: 310px
+                margin-bottom: 87px
+            &:nth-child(3)
+                max-height: 330px
+                margin-bottom: 66px
+            &:nth-child(4)
+                max-height: 300px
+            &:nth-child(5)
+                max-height: 317px
+            &:nth-child(6)
+                max-height: 260px
+        &__img
+            position: absolute
+            top: -50px
+            left: 20px
+        &__title
+            font-family: "Poppins", sans-serif
+            font-weight: 700
+            line-height: 1.7
+            color: $black-color
+            margin-bottom: 5px
+        &__descr
+            font-family: "Poppins", sans-serif
+            font-weight: 400
+            font-size: 14px
+            line-height: 1.5
+            color: $black-color
+            margin-bottom: 20px
+        &__subtitle
+            font-family: "Poppins", sans-serif
+            font-weight: 600
+            font-size: 16px
+            line-height: 1.5
+            color: $black-color
+
+@media screen and (min-width: 1200px) and ( max-width:  1440px)
+    .abilities
+        &-content
+            width: 100%
+            max-width: 1032px
+            margin: 0 auto
+            &__title
+                margin-right: 30px
+        &-cards
+            &__item
+                max-width: 328px
+                &:nth-child(2)
+                    max-height: 330px
+                    margin-bottom: 86px
+                &:nth-child(3)
+                    max-height: 360px
+                    margin-bottom: 65px
+                &:nth-child(4)
+                    max-height: 305px
+                &:nth-child(5)
+                    max-height: 350px
+                &:nth-child(6)
+                    max-height: 280px
+
+@media screen and (min-width: 768px) and ( max-width:  1200px)
+    .abilities
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+            &__title
+                margin-right: 0px
+                max-width: none
+                margin-bottom: 73px
+                width: 100%
+        &-cards
+            &__item
+                max-width: 328px
+                &:nth-child(2)
+                    max-height: 330px
+                    margin-bottom: 86px
+                &:nth-child(3)
+                    max-height: 360px
+                    margin-bottom: 65px
+                &:nth-child(4)
+                    max-height: 305px
+                    margin-bottom: 107px
+                &:nth-child(5)
+                    max-height: 350px
+                &:nth-child(6)
+                    max-height: 280px
+
+@media screen and ( max-width:  768px)
+    .abilities
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+            padding: 60px 0px
+            &__title
+                margin-right: 0px
+                max-width: none
+                margin-bottom: 60px
+                width: 100%
+                font-size: 40px
+        &-cards
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            margin: 0 auto
+            &__item
+                max-width: 296px
+                &:nth-child(2)
+                    max-height: 355px
+                    margin-bottom: 61px
+                &:nth-child(3)
+                    max-height: 400px
+                    margin-bottom: 61px
+                &:nth-child(4)
+                    max-height: 335px
+                    margin-bottom: 61px
+                &:nth-child(5)
+                    max-height: 395px
+                    margin-bottom: 61px
+                &:nth-child(6)
+                    max-height: 275px
+                    margin-bottom: 61px
