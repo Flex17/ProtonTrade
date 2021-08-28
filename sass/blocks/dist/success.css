@@ -1,0 +1,15 @@
+.success {
+  background-color: #FBFBFB;
+  padding: 142px 0;
+}
+.success-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+.success-content__picture {
+  display: block;
+  margin: 0 auto;
+}
+.success-content__text {
+  text-align: center;
+}

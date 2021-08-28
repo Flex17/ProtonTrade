@@ -1,0 +1,62 @@
+.success
+    background-color: #FBFBFB
+    &-content
+        padding: 142px 0
+    &-block
+        max-width: 850px
+        margin: 0 auto
+        &__picture
+            display: block
+            margin: 0 auto
+        &__text
+            text-align: center
+            margin: 40px 0
+        &__btn
+            padding: 18px 86px
+            font-family: "Poppins", sans-serif
+            font-weight: 600
+            color: $white-color
+            margin: 0 auto
+            max-width: 196px
+
+@media screen and (min-width: 1200px) and ( max-width:  1440px)
+    .success
+        &-content
+            width: 100%
+            max-width: 1032px
+            margin: 0 auto
+        &-block
+            &__text
+                font-size: 24px
+                font-weight: 600
+
+@media screen and (min-width: 768px) and ( max-width:  1200px)
+    .success
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+        &-block
+            &__text
+                font-size: 24px
+                font-weight: 600
+
+@media screen and ( max-width:  768px)
+    .success
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+            padding: 83px 0
+        &-block
+            &__text
+                font-size: 24px
+                font-weight: 600
+            &__picture
+                width: 80px
+                height: 80px
+            &__btn
+                max-width: 296px
+                width: 100%
+                span
+                    margin: 0 auto

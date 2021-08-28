@@ -1,0 +1,88 @@
+.helper
+    margin-top: 188px
+    background-color: #4867FF
+    margin-bottom: 139px
+    &-content
+        padding: 80px 0px
+        position: relative
+        &__suptitle
+            font-family: "Rubik", sans-serif
+            font-weight: 400
+            font-size: 28px
+            color: $white-color
+            margin-bottom: 4px
+        &__title
+            color: $white-color
+            margin-bottom: 20px
+        &__tryBtn
+            border: 2px solid $white-color
+            background-color: #4867FF
+            max-width: 276px
+            transition: .3s
+            &:hover
+                background-color: #3F60FE
+        &__phones
+            position: absolute
+            right: -100px
+            top: -150px
+
+@media screen and (min-width: 1200px) and ( max-width:  1440px)
+    .helper
+        &-content
+            width: 100%
+            max-width: 1032px
+            margin: 0 auto
+            padding: 61px 0
+            &__phones
+                max-width: 760px
+                max-height: 564px
+                top: -125px
+                right: -80px
+
+@media screen and (min-width: 768px) and ( max-width:  1200px)
+    .helper
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+            padding: 44px 0
+            &__suptitle
+                font-size: 24px
+            &__title
+                font-size: 60px
+            &__phones
+                max-width: 552px
+                max-height: 454px
+                top: -80px
+                right: -43px
+
+@media screen and (min-width: 768px) and ( max-width:  880px)
+    .helper
+        margin: 100px 0
+        overflow-x: hidden
+        overflow-y: hidden
+        &-content
+            &__phones
+                max-width: 478px
+                max-height: 376px
+                top: -30px
+                right: -73px
+                overflow-x: hidden
+
+@media screen and ( max-width:  768px)
+    .helper
+        margin: 60px 0
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+            padding: 60px 0
+            &__phones
+                width: 208px
+                height: 154px
+                top: -70px
+                right: -16px
+            &__suptitle
+                font-size: 18px
+            &__title
+                font-size: 58px

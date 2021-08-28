@@ -1,0 +1,152 @@
+.contacts
+    background-color: #FBFBFB
+    position: relative
+    &-content
+        display: flex
+        justify-content: space-between
+        align-items: start
+        padding: 100px 0
+    &-arrowUp
+        position: absolute
+        right: 50px
+        bottom: 50px
+        width: 48px
+        height: 48px
+        background: url('../img/connectWithUs/arrowWithUs.svg')
+        background-size: cover
+    &-text
+        width: 33%
+        margin-right: 30px
+        &__subtitle
+            font-family: "Poppins", sans-serif
+            font-weight: 400
+            font-size: 16px
+            color: $black-color
+            margin-top: 16px
+    &-form
+        max-width: 776px
+        &__warning
+            font-family: "Poppins", sans-serif
+            font-weight: 400
+            font-size: 16px
+            color: #808080
+            display: block
+            margin-top: 12px
+            margin-bottom: 24px
+        &__input
+            background: #EDEEEF
+            border: 1px solid #E3E5E6
+            border-radius: 4px
+            padding: 20px 24px
+            font-size: 16px
+            font-family: "Poppins", sans-serif
+            font-weight: 400
+        &__input::placeholder
+            transition: .5s
+            font-size: 16px
+            font-family: "Poppins", sans-serif
+            font-weight: 400
+        &__input:focus::placeholder
+            font-size: 10px
+            transform: translateY(-16px)
+        &__blocks
+            display: flex
+            justify-content: space-between
+        &__nameBlock
+            width: 48%
+            margin-right: 24px
+        &__nameInput
+            width: 100%
+        &__emailBlock
+            width: 48%
+        &__emailInput
+            width: 100%
+        &__messageBlock
+            margin-top: 24px
+            position: relative
+        &__messageInput
+            padding-bottom: 125px
+            width: 100%
+            outline: none
+            resize: none
+        &__messageBlockCounter
+            position: absolute
+            bottom: 10px
+            right: 20px
+            font-family: "Poppins", sans-serif
+            font-weight: 400
+            font-size: 16px
+            color: #B8B8B8
+        &__btn
+            font-family: "Poppins", sans-serif
+            font-weight: 600
+            font-size: 16px
+            color: $white-color
+
+.error //* для jquery плагина валидации форм
+    border-bottom: 2px solid red
+label.error
+    display: none !important
+
+@media screen and (min-width: 1200px) and ( max-width:  1440px)
+    .contacts
+        &-content
+            width: 100%
+            max-width: 1032px
+            margin: 0 auto
+        &-text
+            max-width: 250px
+        &-form
+            &__btn
+                max-width: 276px
+
+@media screen and (min-width: 768px) and ( max-width:  1200px)
+    .contacts
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+            flex-direction: column
+        &-arrowUp
+            display: none
+        &-text
+            width: 100%
+            &__subtitle
+                margin-bottom: 24px
+        &-form
+            width: 100%
+            max-width: none
+            &__btn
+                width: 100%
+                span
+                    margin: 0 auto
+
+@media screen and (min-width: 320px) and ( max-width:  768px)
+    .contacts
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+            flex-direction: column
+        &-arrowUp
+            display: none
+        &-text
+            width: 100%
+            &__subtitle
+                margin-bottom: 24px
+        &-form
+            width: 100%
+            max-width: none
+            &__blocks
+                flex-direction: column
+            &__nameBlock
+                width: 100%
+                margin-bottom: 16px
+            &__emailBlock
+                width: 100%
+            &__messageBlock
+                margin-top: 16px
+            &__btn
+                width: 100%
+                span
+                    margin: 0 auto

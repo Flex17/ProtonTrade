@@ -1,0 +1,74 @@
+.footer
+    background-color: #122791
+    &-content
+        padding: 32px 0
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &-accept
+        font-family: "Poppins", sans-serif
+        font-weight: 400
+        font-size: 16px
+        color: $white-color
+    &-rights
+        font-family: "Poppins", sans-serif
+        font-weight: 400
+        font-size: 16px
+        color: $white-color
+    &-email
+        font-family: "Poppins", sans-serif
+        font-weight: 400
+        font-size: 16px
+        color: $white-color
+
+@media screen and (min-width: 1200px) and ( max-width:  1440px)
+    .footer
+        &-content
+            width: 100%
+            max-width: 1032px
+            margin: 0 auto
+
+@media screen and (min-width: 768px) and ( max-width:  1200px)
+    .footer
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+            flex-wrap: wrap
+        &-accept
+            order: 1
+            width: 50%
+            margin-bottom: 20px
+        &-email
+            width: 50%
+            order: 1
+            text-align: right
+            margin-bottom: 20px
+        &-rights
+            order: 2
+            width: 100%
+
+@media screen and ( max-width:  768px)
+    .footer
+        &-content
+            width: 100%
+            max-width: 90%
+            margin: 0 auto
+            flex-direction: column
+            padding: 32px 0
+        &-accept
+            order: 1
+            width: 100%
+            margin-bottom: 20px
+            text-align: center
+        &-email
+            width: 100%
+            order: 3
+            text-align: left
+            margin-bottom: 20px
+            text-align: center
+        &-rights
+            order: 2
+            width: 100%
+            margin-bottom: 20px
+            text-align: center
