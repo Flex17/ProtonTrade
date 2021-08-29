@@ -42,7 +42,8 @@ function contacts(inputSelector, counterSelector, maxLength) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "formsCheck": () => (/* binding */ formsCheck),
+/* harmony export */   "sendForm": () => (/* binding */ sendForm)
 /* harmony export */ });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
@@ -66,7 +67,76 @@ function formsCheck(formSelector) {
     } catch{}
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formsCheck);
+function sendForm(formBlockSelector, formSelector, successWindowSelector, successWindowBtnSelector) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(formSelector).submit(function (e) {
+        e.preventDefault();
+        jquery__WEBPACK_IMPORTED_MODULE_0___default().ajax({
+            type: "POST",
+            url: '../mailer/smart.php',
+            data: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).serialize()
+        }).done(function () {
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('input').val('');
+
+            // $('form').trigger('reset');
+            const emailInput = document.querySelector('.contacts-form__emailInput');
+
+            if (emailInput.classList.contains('valid')) {
+                console.log(1);
+                successForm(formBlockSelector, successWindowSelector, successWindowBtnSelector);
+            } 
+        });
+        return false;
+    });
+
+    function successForm(formBlockSelector, successWindowSelector, successWindowBtnSelector) {
+        const form = document.querySelector(formBlockSelector),
+              successWindow = document.querySelector(successWindowSelector),
+              successBtn = document.querySelector(successWindowBtnSelector);
+
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(form).fadeOut();
+        // form.classList.add('hide');
+        
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(successWindow).fadeIn('slow');
+        successWindow.classList.remove('hide');
+
+        successBtn.addEventListener('click', () => {
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(successWindow).fadeOut();
+            // successWindow.classList.add('hide');
+        });
+    }
+}
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./js/modules/menu.js":
+/*!****************************!*\
+  !*** ./js/modules/menu.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function menu(menuItemsSelector, menuSelector, menuActiveClass, burgerSelector, burgerActiveClass) {
+    const items = document.querySelectorAll(menuItemsSelector),
+          menu = document.querySelector(menuSelector),
+          burger = document.querySelector(burgerSelector);
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            menu.classList.remove(menuActiveClass);
+            burger.classList.toggle(burgerActiveClass);
+        });
+    });    
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menu);
 
 /***/ }),
 
@@ -106,24 +176,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-
-
 function scroll() {
     try {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function(){
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('[href^="#"]').on('click', function(event){
-                if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('hash') !== "") {
-                event.preventDefault();
-                let hash = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).prop('hash');
-                jquery__WEBPACK_IMPORTED_MODULE_0___default()('html, body').animate({
-                    scrollTop: jquery__WEBPACK_IMPORTED_MODULE_0___default()(hash).offset().top
-                }, 1000, function(){
+        const anchors = document.querySelectorAll('a[href*="#"]');
+
+        for (let anchor of anchors) {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const blockID = anchor.getAttribute('href').substr(1);
+                
+                document.getElementById(blockID).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
-                }
             });
-        });
+        }
     } catch {}
 }
 
@@ -12768,6 +12836,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_contacts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/contacts */ "./js/modules/contacts.js");
 /* harmony import */ var _modules_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/forms */ "./js/modules/forms.js");
 /* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/scroll */ "./js/modules/scroll.js");
+/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/menu */ "./js/modules/menu.js");
+
+
 
 
 
@@ -12776,8 +12847,10 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', function () {
    (0,_modules_nav__WEBPACK_IMPORTED_MODULE_0__.default)(".nav-burger", "burger__active", ".menu", "menu__active"); 
    (0,_modules_contacts__WEBPACK_IMPORTED_MODULE_1__.default)("contacts-form__messageInput", "contacts-form__messageBlockCounter", 600);
-   (0,_modules_forms__WEBPACK_IMPORTED_MODULE_2__.default)('.contacts-form');
+   (0,_modules_forms__WEBPACK_IMPORTED_MODULE_2__.formsCheck)('.contacts-form');
+   (0,_modules_forms__WEBPACK_IMPORTED_MODULE_2__.sendForm)('.contacts', '.contacts-form', '.success', ".success-block__btn");
    (0,_modules_scroll__WEBPACK_IMPORTED_MODULE_3__.default)();
+   (0,_modules_menu__WEBPACK_IMPORTED_MODULE_4__.default)(".menu-list__item", '.menu', 'menu__active', '.nav-burger', 'burger__active');
 });
 })();
 

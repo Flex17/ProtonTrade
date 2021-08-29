@@ -5,23 +5,43 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _jquery = _interopRequireDefault(require("jquery"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function scroll() {
   try {
-    (0, _jquery["default"])(document).ready(function () {
-      (0, _jquery["default"])('[href^="#"]').on('click', function (event) {
-        if ((0, _jquery["default"])(this).attr('hash') !== "") {
-          event.preventDefault();
-          var hash = (0, _jquery["default"])(this).prop('hash');
-          (0, _jquery["default"])('html, body').animate({
-            scrollTop: (0, _jquery["default"])(hash).offset().top
-          }, 1000, function () {});
+    var anchors = document.querySelectorAll('a[href*="#"]');
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      var _loop = function _loop() {
+        var anchor = _step.value;
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          var blockID = anchor.getAttribute('href').substr(1);
+          document.getElementById(blockID).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+      };
+
+      for (var _iterator = anchors[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        _loop();
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+          _iterator["return"]();
         }
-      });
-    });
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
   } catch (_unused) {}
 }
 

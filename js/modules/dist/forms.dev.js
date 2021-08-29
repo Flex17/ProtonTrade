@@ -3,7 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.formsCheck = formsCheck;
+exports.sendForm = sendForm;
 
 var _jquery = _interopRequireDefault(require("jquery"));
 
@@ -26,5 +27,38 @@ function formsCheck(formSelector) {
   } catch (_unused) {}
 }
 
-var _default = formsCheck;
-exports["default"] = _default;
+function sendForm(formBlockSelector, formSelector, successWindowSelector, successWindowBtnSelector) {
+  (0, _jquery["default"])(formSelector).submit(function (e) {
+    e.preventDefault();
+
+    _jquery["default"].ajax({
+      type: "POST",
+      url: '../mailer/smart.php',
+      data: (0, _jquery["default"])(this).serialize()
+    }).done(function () {
+      (0, _jquery["default"])(this).find('input').val(''); // $('form').trigger('reset');
+
+      var emailInput = document.querySelector('.contacts-form__emailInput');
+
+      if (emailInput.classList.contains('valid')) {
+        console.log(1);
+        successForm(formBlockSelector, successWindowSelector, successWindowBtnSelector);
+      }
+    });
+
+    return false;
+  });
+
+  function successForm(formBlockSelector, successWindowSelector, successWindowBtnSelector) {
+    var form = document.querySelector(formBlockSelector),
+        successWindow = document.querySelector(successWindowSelector),
+        successBtn = document.querySelector(successWindowBtnSelector);
+    (0, _jquery["default"])(form).fadeOut(); // form.classList.add('hide');
+
+    (0, _jquery["default"])(successWindow).fadeIn('slow');
+    successWindow.classList.remove('hide');
+    successBtn.addEventListener('click', function () {
+      (0, _jquery["default"])(successWindow).fadeOut(); // successWindow.classList.add('hide');
+    });
+  }
+}
