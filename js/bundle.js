@@ -72,7 +72,7 @@ function sendForm(formBlockSelector, formSelector, successWindowSelector, succes
         e.preventDefault();
         jquery__WEBPACK_IMPORTED_MODULE_0___default().ajax({
             type: "POST",
-            url: '../mailer/smart.php',
+            url: "/mailer/smart.php",
             data: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).serialize()
         }).done(function () {
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('input').val('');

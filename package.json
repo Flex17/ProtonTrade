@@ -1,0 +1,27 @@
+{
+  "name": "protontrade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery-validation": "^1.19.3",
+    "webpack-cli": "^4.8.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.51.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flex17/ProtonTrade.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Flex17/ProtonTrade/issues"
+  },
+  "homepage": "https://github.com/Flex17/ProtonTrade#readme"
+}

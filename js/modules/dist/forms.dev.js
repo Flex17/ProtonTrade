@@ -33,7 +33,7 @@ function sendForm(formBlockSelector, formSelector, successWindowSelector, succes
 
     _jquery["default"].ajax({
       type: "POST",
-      url: '../mailer/smart.php',
+      url: "/mailer/smart.php",
       data: (0, _jquery["default"])(this).serialize()
     }).done(function () {
       (0, _jquery["default"])(this).find('input').val(''); // $('form').trigger('reset');
