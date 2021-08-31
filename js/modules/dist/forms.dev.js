@@ -36,8 +36,7 @@ function sendForm(formBlockSelector, formSelector, successWindowSelector, succes
       url: "/mailer/smart.php",
       data: (0, _jquery["default"])(this).serialize()
     }).done(function () {
-      (0, _jquery["default"])(this).find('input').val(''); // $('form').trigger('reset');
-
+      (0, _jquery["default"])(this).find('input').val('');
       var emailInput = document.querySelector('.contacts-form__emailInput');
 
       if (emailInput.classList.contains('valid')) {
@@ -53,12 +52,11 @@ function sendForm(formBlockSelector, formSelector, successWindowSelector, succes
     var form = document.querySelector(formBlockSelector),
         successWindow = document.querySelector(successWindowSelector),
         successBtn = document.querySelector(successWindowBtnSelector);
-    (0, _jquery["default"])(form).fadeOut(); // form.classList.add('hide');
-
+    (0, _jquery["default"])(form).fadeOut();
     (0, _jquery["default"])(successWindow).fadeIn('slow');
     successWindow.classList.remove('hide');
     successBtn.addEventListener('click', function () {
-      (0, _jquery["default"])(successWindow).fadeOut(); // successWindow.classList.add('hide');
+      (0, _jquery["default"])(successWindow).fadeOut();
     });
   }
 }

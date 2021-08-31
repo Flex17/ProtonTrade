@@ -26,7 +26,6 @@ function sendForm(formBlockSelector, formSelector, successWindowSelector, succes
         }).done(function () {
             $(this).find('input').val('');
 
-            // $('form').trigger('reset');
             const emailInput = document.querySelector('.contacts-form__emailInput');
 
             if (emailInput.classList.contains('valid')) {
@@ -43,14 +42,12 @@ function sendForm(formBlockSelector, formSelector, successWindowSelector, succes
               successBtn = document.querySelector(successWindowBtnSelector);
 
         $(form).fadeOut();
-        // form.classList.add('hide');
-        
+
         $(successWindow).fadeIn('slow');
         successWindow.classList.remove('hide');
 
         successBtn.addEventListener('click', () => {
             $(successWindow).fadeOut();
-            // successWindow.classList.add('hide');
         });
     }
 }
