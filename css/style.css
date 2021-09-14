@@ -58,7 +58,7 @@ input {
 
 .title {
   color: #343A40;
-  font-family: "Rubik";
+  font-family: "Rubik", sans-serif;
   line-height: 1.2;
 }
 
@@ -73,7 +73,7 @@ input {
 }
 
 .subtitle24 {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.5;
@@ -88,6 +88,16 @@ input {
   display: none !important;
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.woff") format("woff"), url("/fonts/Poppins-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-Regular.woff") format("woff"), url("/fonts/Rubik-Regular.woff2") format("woff2");
+  font-display: swap;
+}
 .nav-content {
   display: -webkit-box;
   display: -ms-flexbox;
